@@ -1,0 +1,22 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    padding: 1em;
+    font: 1em;
+    border: 1px solid black;
+    width: 20%;
+    margin: 0.5% auto;
+}
+
+button{
+    padding: 1em;
+    font: 1em;
+    background-color: aqua;
+    border: 1px solid black;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+}
