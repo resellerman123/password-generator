@@ -9,6 +9,10 @@
         header('Location: first-time.php');
     }
 
-    $con = mysqli_connect($array[0], $array[1], $array[2], $array[3]);
+    if($con = mysqli_connect($array[0], $array[1], $array[2], $array[3])){
+        
+    }else{
+        echo 'An Error Occurred';
+    }
     
 ?>
