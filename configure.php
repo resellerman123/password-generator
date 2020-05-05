@@ -6,7 +6,7 @@
         echo '';
     } else{
         // sql to create table
-        $sqlCreate = "CREATE TABLE `password_generator`.`web` ( `web_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , PRIMARY KEY (`web_id`)) ENGINE = InnoDB;";
+        $sqlCreate = "CREATE TABLE `web` ( `web_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , PRIMARY KEY (`web_id`)) ENGINE = InnoDB;";
         $con->query($sqlCreate);
     }
 
@@ -17,11 +17,13 @@
         $resultCheck = $con->query($sqlCheck);
         if ($resultCheck->num_rows > 0){
             $sql = "UPDATE `web` SET `title` = '$TITLE', `url` = '$URL' WHERE `web`.`web_id` = 1";
+            $con->query($sql);
             header('Location: '. $URL);
         } else{
             $sql = "INSERT INTO `web` (`title`, `url`) VALUES ('$TITLE', '$URL')";
+            $con->query($sql);
+            header('Location: '. $URL);
         }
-        $con->query($sql);
     }
 ?>
 
